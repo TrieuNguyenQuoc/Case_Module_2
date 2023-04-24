@@ -3,7 +3,7 @@ import static views.Client.*;
 public class Login {
     private static final Email email1 = new Email();
     private static final Password password = new Password();
-    public static final String[] validEmail = new String[]{"septrieu.com", "quoctrieu"};
+    public static final String[] validEmail = new String[]{"trieu@gmail.com", "nhanvientrieu@gmail.com"};
     public static final String[] validPassword = new String[]{"trieu.com", "*****"};
 
     public static void login() {

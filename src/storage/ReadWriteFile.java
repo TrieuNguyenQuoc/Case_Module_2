@@ -50,7 +50,7 @@ public class ReadWriteFile implements IReadWriteFile {
     public List<ElectronicDevice> readToFile() {
         InputStream inputStream = null;
         try {
-            inputStream = new FileInputStream("test.txt");
+            inputStream = new FileInputStream("case_module_2.txt");
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }

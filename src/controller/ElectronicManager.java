@@ -1,7 +1,7 @@
 package controller;
 
 import model.*;
-import storage.IReadWriteFile;
+import storage.ReadWriteFile;
 import storage.ReadWriteFile;
 import views.Client;
 
@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ElectronicManager {
     private static ElectronicManager instance;
     private final List<ElectronicDevice> electronicDevices;
-    private final IReadWriteFile readWriteFile = ReadWriteFile.getInstance();
+    private final ReadWriteFile readWriteFile = ReadWriteFile.getInstance();
 
     private ElectronicManager() {
         this.electronicDevices = readWriteFile.readToFile();
