@@ -96,7 +96,7 @@ public class Client {
                                 ||   4. Thanh toán:                      ||
                                 ||   0. Thoát chương trình.              ||
                                 ||=======================================||
-                    """);
+                                """);
 
             inPut = admin.checkInt(checkInput);
             switch (inPut) {
@@ -140,7 +140,7 @@ public class Client {
                 String color = checkInput.nextLine();
                 System.out.println("Nhập số lượng điện thoại: ");
                 int quantity = admin.checkInt(checkInput);
-                System.out.println("Nhập kiểu màn hình: ");
+                System.out.println("Nhập hãng điện thoại: ");
                 String typeOfScreen = checkInput.nextLine();
                 return new MobilePhone(id, name, cost, color, quantity, typeOfScreen);
             }
