@@ -42,12 +42,12 @@ public class Login {
     public static void loginReal() {
         while (inPut != 0) {
             System.out.println("""
-             ----------------------------------------------------------
-            |       Bạn đã nhập sai tên tài khoản hoặc mật khẩu.       |
-            |       Bạn có muốn nhập lại không?                        |
-            |       0. Thoát                                           |
-            |       1. Nhập lại:                                       |
-             ----------------------------------------------------------
+            ||=========================================================||
+            ||       Bạn đã nhập sai tên tài khoản hoặc mật khẩu.      ||
+            ||       Bạn có muốn nhập lại không?                       ||
+            ||       0. Thoát                                          ||
+            ||       1. Nhập lại:                                      ||
+            ||=========================================================||
             """);
             inPut = admin.checkInt(checkInput);
             switch (inPut) {

@@ -21,9 +21,9 @@ public class Client {
 
     public static void menuManage() {
         while (inPut != 0) {
-            System.out.println("---------Menu của quản lý-----------");
+            System.out.println("=============================Menu của quản lý============================");
             System.out.println("""
-                    || ==================================================================||
+                    ||===================================================================||
                     ||    Lựa chọn:                                                      ||
                     ||    1.  Danh sách sản phẩm:                                        ||
                     ||    2.  Tổng tiền thanh toáṇ(km):                                  ||
@@ -86,16 +86,16 @@ public class Client {
 
     public static void menuStaff() {
         while (inPut != 0) {
-            System.out.println("-----------Menu nhân viên------------");
+            System.out.println("==============Menu nhân viên==============");
             System.out.println("""
-                    | ---------------------------|
-                    |   Lựa chọn:                |
-                    |   1. Danh sách sản phẩm:   |
-                    |   2. Tổng tiền sản phẩm:   |
-                    |   3. Đăng xuất.            |
-                    |   4. Thanh toán:           |
-                    |   0. Thoát chương trình.   |
-                    |----------------------------|
+                                ||=======================================||
+                                ||   Lựa chọn:                           ||
+                                ||   1. Danh sách sản phẩm:              ||
+                                ||   2. Tổng tiền sản phẩm:              ||
+                                ||   3. Đăng xuất.                       ||
+                                ||   4. Thanh toán:                      ||
+                                ||   0. Thoát chương trình.              ||
+                                ||=======================================||
                     """);
 
             inPut = admin.checkInt(checkInput);
