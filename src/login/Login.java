@@ -3,7 +3,7 @@ import static views.Client.*;
 public class Login {
     private static final Email email1 = new Email();
     private static final Password password = new Password();
-    public static final String[] validEmail = new String[]{"trieu@gmail.com", "nhanvientrieu@gmail.com"};
+    public static final String[] validEmail = new String[]{"sep@gmail.com", "nhanvien@gmail.com"};
     public static final String[] validPassword = new String[]{"********", "trieu.com"};
 
     public static void login() {
@@ -42,7 +42,8 @@ public class Login {
         while (inPut != 0) {
             System.out.println("""
             ||=========================================================||
-            ||       Bạn đã nhập sai tên tài khoản hoặc mật khẩu.      ||
+            ||       Bạn đã nhập sai tên tài khoản hoặc mật khẩu!      ||
+            ||         Mời bạn nhập lại mật khẩu đã quên!              ||
             ||       Bạn có muốn nhập lại không?                       ||
             ||       0. Thoát                                          ||
             ||       1. Nhập lại:                                      ||

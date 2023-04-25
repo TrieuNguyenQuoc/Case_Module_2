@@ -21,17 +21,16 @@ public class Client {
 
     public static void menuManage() {
         while (inPut != 0) {
-            System.out.println("=============================Menu của quản lý============================");
+            System.out.println("===========================Menu của quản lý===========================");
             System.out.println("""
                     ||===================================================================||
-                    ||    Lựa chọn:                                                      ||
+                    ||    Chọn đi :                                                      ||
                     ||    1.  Danh sách sản phẩm:                                        ||
-                    ||    2.  Tổng tiền thanh toáṇ(km):                                  ||
+                    ||    2.  Tổng tiền thanh toán:                                      ||
                     ||    3.  Thêm sản phẩm:                                             ||
                     ||    4.  Sửa sản phẩm:                                              ||
-                    ||    5.  Xoá sản phẩm:                                              ||
-                    ||    6.  Tìm kiếm sản phẩm:                                         ||
-                    ||    7.  Sắp xếp sản phẩm:                                          ||
+                    ||    5.  Xoá sản phẩm theo id:                                      ||
+                    ||    6.  Tìm kiếm theo tên của sản phẩm:                            ||
                     ||    8.  Tổng tiền trước khuyến mại:                                ||
                     ||    9.  Thanh toán:                                                ||
                     ||    10. Đăng xuất:                                                 ||
@@ -63,9 +62,6 @@ public class Client {
                     break;
                 case 6:
                     admin.searchElement(checkInput);
-                    break;
-                case 7:
-                    admin.sortElement();
                     break;
                 case 8:
                     System.out.println(admin.totalElectronicDeviceBeforeSale());
@@ -168,7 +164,7 @@ public class Client {
                 double cost = admin.checkDouble(checkInput);
                 System.out.println("Nhập màu sắc: ");
                 String color = checkInput.nextLine();
-                System.out.println("Nhập số lựợng tủ lạnh: ");
+                System.out.println("Nhập số lượng tủ lạnh: ");
                 int quantity = admin.checkInt(checkInput);
                 System.out.println("Nhập loại tủ lạnh: ");
                 String cooling = checkInput.nextLine();

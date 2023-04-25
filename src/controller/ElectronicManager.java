@@ -5,7 +5,6 @@ import storage.ReadWriteFile;
 
 import views.Client;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,24 +13,24 @@ public class ElectronicManager {
     private final List<ElectronicDevice> electronicDevices;
     private final ReadWriteFile readWriteFile = ReadWriteFile.getInstance();
 
-    private ElectronicManager() {
+    private ElectronicManager ( ) {
         this.electronicDevices = readWriteFile.readToFile();
     }
 
-    public static ElectronicManager getInstance() {
+    public static ElectronicManager getInstance ( ) {
         if (instance == null) {
             instance = new ElectronicManager();
         }
         return instance;
     }
 
-    //----------------In ra màn hình
-    public void display() {
-        System.out.println(electronicDevices);
-    }
 
-    //Tổng tiền điện thoại------------------
-    public double totalPriceMobilePhone() {
+    public void display ( ) {
+        System.out.println(electronicDevices);
+    } //In ra màn hình
+
+
+    public double totalPriceMobilePhone ( ) {//Tổng tiền điện thoại
         double priceMobilePhone = 0;
         double totalPriceMobilePhoneSale = 0;
         for (ElectronicDevice electronicDevice :
@@ -44,8 +43,8 @@ public class ElectronicManager {
         return totalPriceMobilePhoneSale;
     }
 
-    //Tổng tiền máy tính------------------
-    public double totalPricePc() {
+
+    public double totalPricePc ( ) { //Tổng tiền máy tính
         double pricePc = 0;
         double totalPricePcSale = 0;
         for (ElectronicDevice electronicDevice :
@@ -58,8 +57,7 @@ public class ElectronicManager {
         return totalPricePcSale;
     }
 
-    //Tổng tiền tủ lạnh-----------------------------
-    public double totalPriceFridge() {
+    public double totalPriceFridge ( ) {    //Tổng tiền tủ lạnh
         double totalPriceFridgeSale = 0;
         for (ElectronicDevice electronicDevice :
                 electronicDevices) {
@@ -69,32 +67,32 @@ public class ElectronicManager {
         }
         return totalPriceFridgeSale;
     }
-    public double totalElectronicDeviceBeforeSale(){
+
+    public double totalElectronicDeviceBeforeSale ( ) {
         double totalElectroniceDevice = 0;
-        for (ElectronicDevice e:
-             electronicDevices) {
+        for (ElectronicDevice e :
+                electronicDevices) {
             totalElectroniceDevice += e.getAmount();
         }
         return totalElectroniceDevice;
     }
 
 
-    public double priceElectronicDevice() {
+    public double priceElectronicDevice ( ) {
         double priceElectronicDevice = 0;
         priceElectronicDevice += totalPriceFridge() + totalPricePc() + totalPriceMobilePhone();//Tổng tiền các sản phẩm sau khuyến mãi
         return priceElectronicDevice;
     }
 
 
-
-    public void addElement(ElectronicDevice electronicDevice) {  // Thêm phần tử------------------
+    public void addElement (ElectronicDevice electronicDevice) {  // Thêm phần tử
         electronicDevices.add(electronicDevice);
         readWriteFile.writeToFile(electronicDevices);
     }
 
 
-    public void deleteElement(Scanner scanner) {
-        System.out.println("Nhập sản phẩm cần xóa: ");// Xóa theo id
+    public void deleteElement (Scanner scanner) {
+        System.out.println("Nhập sản phẩm cần xóa theo id: ");// Xóa theo id
         String id = String.valueOf(checkInt(scanner));
         for (ElectronicDevice e :
                 electronicDevices) {
@@ -110,16 +108,17 @@ public class ElectronicManager {
         readWriteFile.writeToFile(electronicDevices);
     }
 
-    public void deleteElectronicDevice(){
+    public void deleteElectronicDevice ( ) {
         electronicDevices.removeAll(electronicDevices);  // Xóa tất cả phần tử
         readWriteFile.writeToFile(electronicDevices);
     }
-    public void payToBill(){
-        System.out.println("Tổng hóa đơn: " + priceElectronicDevice());
+
+    public void payToBill ( ) {
+        System.out.println("Tổng cái giá phải trả: " + priceElectronicDevice());
         deleteElectronicDevice();
     }
 
-    public void searchElement(Scanner scanner) {
+    public void searchElement (Scanner scanner) {
         int flag = -1;
         System.out.println("Mời bạn nhập tên sản phẩm: ");  //Tìm theo tên
         String searhString = scanner.nextLine();
@@ -135,20 +134,8 @@ public class ElectronicManager {
         }
 
     }
-    private void sortSort(){
-        electronicDevices.sort(new Comparator<ElectronicDevice>() {
-            @Override
-            public int compare(ElectronicDevice o1, ElectronicDevice o2) { //Sắp xếp sản phẩm
-                return (Integer.parseInt(o1.getId())) - (Integer.parseInt(o2.getId()));
-            }
-        });
-    }
-    public void sortElement(){
-        sortSort();
-        readWriteFile.writeToFile(electronicDevices);
-    }
 
-    public void editElement(Scanner scanner) {//Sửa theo tên sản phẩm
+    public void editElement (Scanner scanner) {//Sửa theo tên sản phẩm
         int flag = -1;
         String newId;
         String newName;
@@ -202,12 +189,12 @@ public class ElectronicManager {
                     electronicDevices) {
                 if (!id.equals(e.getId())) {
                     System.out.println("""
-                     -----------------------------------------------------------------------
-                    |       Không tìm thấy sản phẩm cần sửa. Bạn có muốn nhập lại không?    |
-                    |       10. Có, mời bạn nhập l  ại:                                     |
-                    |       11. Thoát ra menu.                                              |
-                     -----------------------------------------------------------------------
-                    """);
+                            ||=======================================================================||
+                            ||       Không tìm thấy sản phẩm cần sửa. Bạn có muốn nhập lại không?    ||
+                            ||       10. Có, mời bạn nhập lại:                                       ||
+                            ||       11. Thoát ra menu.                                              ||
+                            ||=======================================================================||
+                            """);
                     int inPut = checkInt(scanner);
                     switch (inPut) {
                         case 10:
@@ -226,7 +213,7 @@ public class ElectronicManager {
         readWriteFile.writeToFile(electronicDevices);
     }
 
-    public int checkInt(Scanner scanner) {
+    public int checkInt (Scanner scanner) {
         try {
             return Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
@@ -235,7 +222,7 @@ public class ElectronicManager {
         return checkInt(scanner);
     }
 
-    public double checkDouble(Scanner scanner) {
+    public double checkDouble (Scanner scanner) {
         try {
             return Double.parseDouble(scanner.nextLine());
         } catch (Exception e) {
@@ -244,13 +231,15 @@ public class ElectronicManager {
         return checkDouble(scanner);
     }
 
-    public String getID(Scanner scanner) {
+    public String getID (Scanner scanner) {
         while (true) {
             try {
                 String id = scanner.nextLine();
                 if (Regex.validateId(id)) {
 
                     for (ElectronicDevice e : electronicDevices) {
+
+
                         if (e.getId().equals(id)) {
                             throw new Exception();
                         }
