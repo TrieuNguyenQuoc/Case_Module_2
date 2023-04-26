@@ -24,17 +24,17 @@ public class Client {
             System.out.println("===========================Menu của quản lý===========================");
             System.out.println("""
                     ||===================================================================||
-                    ||    Chọn đi :                                                      ||
+                    ||    Mời chọn:                                                      ||
                     ||    1.  Danh sách sản phẩm:                                        ||
-                    ||    2.  Tổng tiền thanh toán:                                      ||
+                    ||    2.  Tổng tiền:                                                 ||
                     ||    3.  Thêm sản phẩm:                                             ||
                     ||    4.  Sửa sản phẩm:                                              ||
                     ||    5.  Xoá sản phẩm theo id:                                      ||
                     ||    6.  Tìm kiếm theo tên của sản phẩm:                            ||
-                    ||    8.  Tổng tiền trước khuyến mại:                                ||
-                    ||    9.  Thanh toán:                                                ||
-                    ||    10. Đăng xuất:                                                 ||
-                    ||    0.  Thoát chương trình:                                        ||  
+                    ||    7.  Tổng tiền hóa đơn:                                         ||
+                    ||    8.  Thanh toán:                                                ||
+                    ||    9.  Đăng xuất:                                                 ||
+                    ||    10. Thoát chương trình:                                        ||  
                     ||===================================================================||
                     """);
             System.out.println("Mời bạn nhập:");
@@ -63,13 +63,13 @@ public class Client {
                 case 6:
                     admin.searchElement(checkInput);
                     break;
-                case 8:
+                case 7:
                     System.out.println(admin.totalElectronicDeviceBeforeSale());
                     break;
-                case 9:
+                case 8:
                     admin.payToBill();
                     break;
-                case 0:
+                case 9:
 
                     System.exit(inPut);
                 case 10:

@@ -190,7 +190,7 @@ public class ElectronicManager {
                 if (!id.equals(e.getId())) {
                     System.out.println("""
                             ||=======================================================================||
-                            ||       Không tìm thấy sản phẩm cần sửa. Bạn có muốn nhập lại không?    ||
+                            ||       Đã thay thế sản phẩm cần sửa. Bạn có muốn nhập lại không?       ||
                             ||       10. Có, mời bạn nhập lại:                                       ||
                             ||       11. Thoát ra menu.                                              ||
                             ||=======================================================================||
